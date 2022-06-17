@@ -1,0 +1,192 @@
+/* General Properties */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --blue-shadow: hsla(212, 52%, 45%, 0.49);
+
+  /* Neutral */
+
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+
+  font-size: 62.5%;
+}
+
+.wrapper {
+  width: 31.1rem;
+  margin-inline: auto;
+}
+
+h1,
+h2 {
+  color: var(--very-dark-blue);
+}
+
+p {
+  color: var(--grayish-blue);
+}
+
+/* Body Properties */
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  background-color: var(--very-light-gray);
+}
+
+/* Header Properties */
+
+header {
+  padding-top: 8.5rem;
+
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+header h1 {
+  font-weight: 200;
+}
+
+header p {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+/* Main Properties */
+
+main {
+  margin-top: 7.5rem;
+  margin-bottom: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* Cards Properties */
+
+.card {
+  width: 100%;
+  height: 22.2rem;
+
+  border-radius: 1rem;
+
+  background-color: white;
+  box-shadow: 0px 3px 30px -10px var(--blue-shadow);
+
+  overflow: hidden;
+}
+
+.topBorder {
+  width: 100%;
+  height: 0.4rem;
+
+  background-color: black;
+}
+
+.supervisor .topBorder {
+  background-color: var(--cyan);
+}
+
+.teamBuilder .topBorder {
+  background-color: var(--red);
+}
+
+.karma .topBorder {
+  background-color: var(--orange);
+}
+
+.calculator .topBorder {
+  background-color: var(--blue);
+}
+
+.cardContent {
+  height: 100%;
+  padding: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardText h2 {
+  font-size: 2rem;
+}
+
+.cardText p {
+  margin-top: 1rem;
+
+  font-size: 1.4rem;
+}
+
+.cardContent img {
+  align-self: flex-end;
+}
+
+/* Footer Properties */
+
+footer {
+  margin-bottom: 3rem;
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+  /* Header */
+
+  header.wrapper {
+    width: 51.2rem;
+  }
+
+  header h1 {
+    font-size: 3.6rem;
+  }
+
+  /* Main */
+
+  main {
+    display: grid;
+    grid-template-areas: 
+    'A B D'
+    'A C D';
+    align-items: center;
+  }
+
+  main.wrapper {
+    width: 111.3rem;
+  }
+
+  /* Cards */
+
+  .card {
+    width: 35rem;
+  }
+
+  .card.supervisor {
+    grid-area: A;
+  }
+
+  .card.teamBuilder {
+    grid-area: B;
+  }
+
+  .card.karma {
+    grid-area: C;
+  }
+
+  .card.calculator {
+    grid-area: D;
+  }
+}
